@@ -1,20 +1,27 @@
 //! fajar-distributed — Distributed runtime for Fajar Lang.
 //!
+//! RPC framework, distributed tensors, cluster scheduling, and fault tolerance.
+//! Provides built-in primitives for multi-node ML training and microservices
+//! without external frameworks.
+//!
 //! Extracted from fajar-lang per Compass §5.1 ("Hapus dari core").
-//! Skeleton stage — source files will land at Phase F.2.
 
 #![doc(html_root_url = "https://docs.rs/fajar-distributed/0.1.0")]
+// Nightly clippy allow-list — mirrors fajar-lang's src/lib.rs allow-list at extraction time.
+#![allow(clippy::collapsible_if)]
 
-pub fn version() -> &'static str {
-    env!("CARGO_PKG_VERSION")
-}
-
-#[cfg(test)]
-mod tests {
-    use super::*;
-
-    #[test]
-    fn skeleton_version_matches_cargo() {
-        assert_eq!(version(), "0.1.0");
-    }
-}
+pub mod cluster;
+pub mod data_plane;
+pub mod deploy;
+pub mod discovery;
+pub mod dist_bench;
+pub mod fault_tolerance;
+pub mod fault_tolerance_v2;
+pub mod ml_training;
+pub mod raft;
+pub mod rpc;
+pub mod rpc_v2;
+pub mod scheduler;
+pub mod security;
+pub mod tensors;
+pub mod transport;

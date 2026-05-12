@@ -1,0 +1,20 @@
+[package]
+name = "fajar-distributed"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.87"
+authors = ["Muhamad Fajar Putranto <fajar@pajak.com>"]
+description = "Distributed runtime for Fajar Lang — Raft consensus, RPC, cluster discovery, fault tolerance, distributed ML training. Extracted from fajar-lang per Compass §5.1."
+license = "Apache-2.0"
+repository = "https://github.com/fajarkraton/fajar-distributed"
+readme = "README.md"
+keywords = ["distributed", "raft", "rpc", "cluster", "fajar-lang"]
+categories = ["concurrency", "network-programming", "asynchronous"]
+
+[lib]
+name = "fajar_distributed"
+path = "src/lib.rs"
+
+[dependencies]
+
+[dev-dependencies]
